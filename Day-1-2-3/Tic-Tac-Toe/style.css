@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+
+:root {
+    --light-slate: #cbd5e1;
+    --dark-slate: #0f172a;
+    --dark-indigo: #3730a3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: var(--dark-slate);
+}
+
+.select-box,
+.play-board,
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.select-box {
+    background: rgb(99, 102, 241);
+    background: linear-gradient(90deg, rgba(99, 102, 241, 1) 0%, rgba(79, 70, 229, 1) 37%, rgba(55, 48, 163, 1) 71%);
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 330px;
+    width: 100%;
+    border: 1px solid var(--light-slate);
+}
+
+.select-box.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.select-box header {
+    font-size: 23px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: white;
+    border-bottom: 1px solid var(--light-slate);
+}
+
+.select-box .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+    color: var(--light-slate);
+}
+
+.select-box .options {
+    display: flex;
+    width: 100%;
+}
+
+.options button {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--dark-indigo);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover,
+.result-box .btn button:hover {
+    transform: scale(0.96);
+}
+
+.options button.playerX {
+    margin-right: 5px;
+}
+
+.options button.playerO {
+    margin-left: 5px;
+}
+
+.play-board {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play-board.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid var(--light-slate);
+    border-radius: 5px;
+}
+
+.play-board .details {
+    background: rgb(99, 102, 241);
+    background: linear-gradient(90deg, rgba(99, 102, 241, 1) 0%, rgba(79, 70, 229, 1) 37%, rgba(55, 48, 163, 1) 71%);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.play-board .details .players {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+
+.players.active span:first-child {
+    color: var(--dark-indigo);
+}
+
+.players.active span:nth-child(2) {
+    color: var(--light-slate);
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.play-board .details .players span {
+    width: 100%;
+    border-radius: 5px;
+    padding: 7px 0;
+    color: var(--light-slate);
+    font-size: 19px;
+    font-weight: 500;
+    cursor: default;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.details .players span:first-child {
+    color: var(--light-slate);
+}
+
+.details .slider {
+    position: absolute;
+    top: 0;
+    left: 50;
+    height: 100%;
+    width: 50%;
+    background: var(--dark-slate);
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.play-board .play-area {
+    margin-top: 20px;
+}
+
+.play-board section {
+    display: flex;
+}
+
+.play-board section span {
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    background-color: var(--light-slate);
+    border-radius: 5px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 80px;
+    color: var(--dark-indigo);
+}
+
+.result-box {
+    background: rgb(99, 102, 241);
+    background: linear-gradient(90deg, rgba(99, 102, 241, 1) 0%, rgba(79, 70, 229, 1) 37%, rgba(55, 48, 163, 1) 71%);
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid var(--light-slate);
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.result-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid var(--light-slate);
+    border-radius: 5px;
+}
+
+.result-box .won-text {
+    color: var(--light-slate);
+    font-size: 25px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text p {
+    font-weight: 600;
+    margin: 0 3px;
+}
+
+.result-box .btn {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.result-box .btn button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--dark-indigo);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.celebrate {
+    margin: auto;
+}
