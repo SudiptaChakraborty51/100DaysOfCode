@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #1e293b;
+    --seconary-color: #6ee7b7;
+}
+
+* {
+    margin: auto;
+}
+
+main {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    margin: 60px 80px;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+h1 {
+    color: var(--seconary-color);
+}
+
+label {
+    color: white;
+    font-size: 1.2rem;
+}
+
+input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+button {
+    background-color: var(--seconary-color);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+h2 {
+    color: white;
+}
